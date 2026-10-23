@@ -6,12 +6,22 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 
 ## Apps
 
-| App | Description |
-|---|---|
-| **PhotoLynk** | Cross-platform photo & video backup with end-to-end encryption, digital proof-of-authenticity certificates (RFC 3161 timestamps, C2PA provenance manifests, 4-layer EXIF hashing), device pairing/sync, and a Solana cNFT Web3 album minted to *your* wallet |
-| **PaceSeeker** | AI-assisted DCA trading bot — on-device strategy learning, multi-regime indicators, crash-safe state |
-| **Lane** | Avatar/profile companion app for the ecosystem |
-| **PhotoLynk Server / Desktop Tray** | Self-hosted backup server — run it on a Pi, a VPS, or your desktop. Public bundle: [`Server-Public`](https://github.com/viktorvishyn369/Server-Public) |
+### PhotoLynk — Released
+Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. End-to-end encrypted StealthCloud or your own self-hosted server, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
+
+- [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
+
+### PaceSeeker — Released
+Self-custodial auto-trading for Solana, built for Solana Mobile. Three strategies: **DEX arbitrage** (Raydium, Orca, Meteora via Jupiter), **CEX arbitrage** across 7 exchanges, and a **DCA AI** with 37 indicators, a daily macro overlay, and self-learning adaptive weights. Simulate risk-free in SIM mode, then optionally go LIVE with biometric-gated session keys — your keys never leave the device. Daily loss caps, slippage guards, 24h expiring session wallet; DEX trades take a 10% performance fee on net profit only.
+
+- [Google Play](https://play.google.com/store/apps/details?id=com.stealthlynk.paceseeker) · Solana Mobile dApp Store (`com.stealthlynk.paceseeker`)
+
+### Lane — Coming Soon
+A voice companion that runs entirely on your phone: on-device language model (Qwen), offline Whisper speech recognition, and Kokoro/Piper voices — recognition, reasoning and speech synthesis all happen on-device. Wake/sleep phrases, multilingual replies, barge-in interruptions, voice tools (weather, web search, apps, alarms, calling), and a changeable avatar. Cloud models (OpenAI, Anthropic, Gemini and more) are strictly opt-in bring-your-own-key. Optional Solana wallet connect via Mobile Wallet Adapter; your avatar can be published as a cNFT you own — always behind explicit confirmation.
+
+> One paid plan in any StealthLynk app covers them all on your linked account — a Lane subscription unlocks PaceSeeker and a 100 GB PhotoLynk plan. Same 7-day trial, 3-day grace, and time-stacking rules everywhere.
+
+**PhotoLynk Server / Desktop Tray** — self-hosted backup server on a Pi, VPS, or desktop. Public bundle: [`Server-Public`](https://github.com/viktorvishyn369/Server-Public)
 
 ## Security model
 
@@ -31,7 +41,7 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 | Repo | Visibility | Purpose |
 |---|---|---|
 | [`Server-Public`](https://github.com/viktorvishyn369/Server-Public) | public | Self-host bundle: desktop tray, public pages, policy documents |
-| [`PhotoLynk-iOS-Android`](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android) | public | Early PhotoLynk snapshot (archived demo) |
+| [`PhotoLynk-iOS-Android`](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android) | public | PhotoLynk desktop **releases** + early snapshot |
 | [`PhotoLynk-SolanaMobile`](https://github.com/viktorvishyn369/PhotoLynk-SolanaMobile) | public | Early Solana Mobile build (archived) |
 | `Server`, `PhotoLynk`, `PaceSeeker`, `Lane`, `nft-service` | private | Production codebase |
 
