@@ -31,8 +31,8 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 | Repo | Visibility | Purpose |
 |---|---|---|
 | [`Server-Public`](https://github.com/viktorvishyn369/Server-Public) | public | Self-host bundle: desktop tray, public pages, policy documents |
-| [`PhotoLynk-Demo`](https://github.com/viktorvishyn369/PhotoLynk-Demo) | public | Early PhotoLynk snapshot (archived demo) |
-| [`PhotoLynk-Solana-Mobile`](https://github.com/viktorvishyn369/PhotoLynk-Solana-Mobile) | public | Early mobile demo (archived) |
+| [`PhotoLynk-iOS-Android`](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android) | public | Early PhotoLynk snapshot (archived demo) |
+| [`PhotoLynk-SolanaMobile`](https://github.com/viktorvishyn369/PhotoLynk-SolanaMobile) | public | Early Solana Mobile build (archived) |
 | `Server`, `PhotoLynk`, `PaceSeeker`, `Lane`, `nft-service` | private | Production codebase |
 
 ## Links
