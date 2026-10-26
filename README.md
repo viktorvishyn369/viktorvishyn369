@@ -11,7 +11,7 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 
 Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. End-to-end encrypted StealthCloud or your own self-hosted server, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
 
-- [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · [App Store](https://apps.apple.com/app/photolynk/id6748285696) · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
+- [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · App Store — coming soon · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
 
 ### PaceSeeker — Released
 <img src="images/logo_paceseeker.png" alt="PaceSeeker" width="64">
