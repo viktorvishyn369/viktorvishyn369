@@ -9,7 +9,7 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 ### PhotoLynk — Released
 <img src="images/logo_photolynk.png" alt="PhotoLynk" width="64">
 
-Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. End-to-end encrypted StealthCloud or your own local server, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
+Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. A local server on your LAN or zero-knowledge encrypted StealthCloud, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · App Store — coming soon · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
 
@@ -60,7 +60,7 @@ A voice companion that runs entirely on your phone: on-device language model (Qw
 
 ---
 
-## PhotoLynk — Self‑Hosted. Encrypted Cloud. Android ↔ Desktop.
+## PhotoLynk — Encrypted photo & video backup. Local server or StealthCloud. Android · iOS · Desktop.
 
 <img src="https://raw.githubusercontent.com/viktorvishyn369/Server-Public/main/server/public/images/logo_photolynk.png" alt="PhotoLynk" width="120">
 
@@ -81,8 +81,9 @@ Back up photos/videos to a local server or StealthCloud, and restore on any phon
 |----------|--------|----------------|
 | **Android** | ✅ Live on Google Play | On-chain wallet payment flow |
 | **Solana Mobile dApp Store** | ✅ Available on Solana Mobile | On-chain wallet payment flow |
+| **iOS** | 🔜 Coming soon | App Store in-app purchases |
 
-The PhotoLynk mobile apps feature end-to-end encryption, self-hosted or cloud backup options, and seamless cross-platform restore.
+The PhotoLynk mobile app backs up to a local server on your LAN or to zero-knowledge StealthCloud, and restores on any phone with the same credentials.
 
 **Android (Google Play) and Solana Mobile dApp Store are live.** iOS is coming soon — it will use App Store–compliant in-app purchases instead of on-chain payments.
 
@@ -161,7 +162,7 @@ contains the tray application source, public pages, and documentation.
 ### StealthCloud backup
 
 - You only need the **mobile app**.
-- Files are encrypted on-device and uploaded as encrypted chunks.
+- Files are encrypted on-device and uploaded as encrypted chunks with a per-file manifest.
 - The cloud stores encrypted data only.
 
 ## Backup Speed Modes
@@ -313,7 +314,7 @@ PhotoLynk uses industry-standard security practices similar to those employed by
 |-------|------------|
 | **Encryption Algorithm** | XSalsa20-Poly1305 via TweetNaCl (same as Signal Protocol, Keybase) |
 | **Key Derivation** | Master key derived on-device, never transmitted |
-| **Chunk Encryption** | Each 2MB chunk encrypted independently with unique nonce |
+| **Chunk Encryption** | Files split and each chunk encrypted independently with a unique nonce |
 | **Manifest Encryption** | File metadata also encrypted — server sees only opaque blobs |
 | **Key Storage** | Android Keystore (hardware-backed on supported devices) |
 
