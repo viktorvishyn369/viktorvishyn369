@@ -129,6 +129,14 @@ it bundles the complete backup server and tray for macOS, Windows, and Linux.
 
 The self-host path is local-network only — the server and your phone talk on
 the same LAN, nothing leaves your network.
+
+For a headless machine on the same LAN (Pi, NAS, home server), the server
+component also ships inside the Linux packages — extract it and run it:
+
+```bash
+# Debian/Ubuntu — extract the bundled server from the .deb
+dpkg-deb -x PhotoLynk-Desktop-*-Linux-x64.deb /tmp/photolynk-pkg
+# server lives under resources/server/ inside the package
 cd /tmp/photolynk-pkg/opt/*/resources/server
 npm install --omit=dev
 node server.js        # or install as a systemd service
