@@ -9,7 +9,7 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 ### PhotoLynk — Released
 <img src="images/logo_photolynk.png" alt="PhotoLynk" width="64">
 
-Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. End-to-end encrypted StealthCloud or your own self-hosted server, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
+Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. End-to-end encrypted StealthCloud or your own local server, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · App Store — coming soon · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
 
@@ -29,7 +29,7 @@ A voice companion that runs entirely on your phone: on-device language model (Qw
 
 > One paid plan in any StealthLynk app covers them all on your linked account — a Blipp One subscription unlocks PaceSeeker and a 100 GB PhotoLynk plan. Same 7-day trial, 3-day grace, and time-stacking rules everywhere.
 
-**PhotoLynk Server / Desktop Tray** — self-hosted backup server on a Pi, VPS, or desktop. Public bundle: [`Server-Public`](https://github.com/viktorvishyn369/Server-Public)
+**PhotoLynk Server / Desktop Tray** — self-hosted backup server on your local network — Pi, NAS, or desktop. Public bundle: [`Server-Public`](https://github.com/viktorvishyn369/Server-Public)
 
 ## Security model
 
@@ -66,7 +66,7 @@ A voice companion that runs entirely on your phone: on-device language model (Qw
 
 **A project by <a href="https://stealthlynk.io" target="_blank">StealthLynk LLC</a>** — Building secure, privacy-respecting infrastructure for real-world digital systems.
 
-Back up photos/videos to your own server or StealthCloud, and restore on any phone with the same credentials.
+Back up photos/videos to a local server or StealthCloud, and restore on any phone with the same credentials.
 
 > 🎥 **[Watch the 60-Second Demo Video on YouTube](https://youtu.be/FNTu4fUd6y8)**  
 > 📄 **[Read the Technical Pitch Deck](https://github.com/viktorvishyn369/Server-Public/blob/main/PITCH_DECK.md)**
@@ -111,21 +111,7 @@ Store links:
 
 Done. Start backing up your photos/videos.
 
-### Option B: Remote Backup (VPS / Internet)
-
-Remote works like Local mode, but your server runs on a remote machine (VPS) and the app connects over HTTPS.
-
-1. Install and run PhotoLynk Server on your remote machine.
-2. Configure HTTPS (TLS) on the server (recommended: domain + reverse proxy such as Nginx/Certbot/Cloudflare).
-3. Ensure the server is reachable from the internet over HTTPS.
-4. In the mobile app Settings:
-   - Select **Remote** connection
-   - Enter your server host (domain only — no http(s)://, no port, no path)
-     - Example: `remote.example.com`
-
-Note: the mobile app automatically uses HTTPS for Remote domains. Ensure your domain is pointed to the server and has a valid certificate.
-
-### Option C: StealthCloud Backup
+### Option B: StealthCloud Backup
 
 If you choose **StealthCloud**, you do not need to download/install the server app.
 
@@ -141,13 +127,8 @@ The supported self-host path is the packaged desktop app from
 [Releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases) —
 it bundles the complete backup server and tray for macOS, Windows, and Linux.
 
-For a headless Linux server/VPS, the server component also ships inside the
-Linux packages — extract it and run with systemd:
-
-```bash
-# Debian/Ubuntu — extract the bundled server from the .deb
-dpkg-deb -x PhotoLynk-Desktop-*-Linux-x64.deb /tmp/photolynk-pkg
-# server lives under resources/server/ inside the package
+The self-host path is local-network only — the server and your phone talk on
+the same LAN, nothing leaves your network.
 cd /tmp/photolynk-pkg/opt/*/resources/server
 npm install --omit=dev
 node server.js        # or install as a systemd service
@@ -313,27 +294,8 @@ PhotoLynk uses industry-standard security practices similar to those employed by
 
 **Risk Assessment:**
 - ✅ Safe on trusted home networks
-- ⚠️ On public/untrusted WiFi: traffic could be intercepted (use Remote + HTTPS instead)
+- ⚠️ On public/untrusted WiFi: traffic could be intercepted (mobile hotspot to your own laptop works fine)
 - 🔒 Even if intercepted, attacker would need valid JWT + matching device UUID
-
-### Remote Backup (VPS/Internet)
-
-**Security Model:** Authenticated access over encrypted transport (HTTPS/TLS)
-
-| Layer | Protection |
-|-------|------------|
-| **Transport** | TLS 1.2/1.3 encryption (same as banking, e-commerce) |
-| **Authentication** | JWT + device UUID binding |
-| **Server Security** | Helmet.js security headers, CORS, rate limiting |
-
-When properly configured with HTTPS:
-- **Man-in-the-middle attacks:** Virtually impossible with valid TLS certificate
-- **Interception probability:** Near zero — same protection as online banking
-- **Brute force:** Rate-limited to 25 attempts per 15 minutes
-
-**Recommended Setup:**
-- Use a domain with Let's Encrypt certificate (free, auto-renewing)
-- The installer offers Nginx + Certbot setup for easy HTTPS
 
 ### StealthCloud Backup (Zero-Knowledge Encryption)
 
@@ -377,10 +339,9 @@ When properly configured with HTTPS:
 | Mode | Encryption | Who Can Read Your Files |
 |------|------------|------------------------|
 | **Local** | None (your own machine) | You only |
-| **Remote** | TLS in transit | You + your server |
 | **StealthCloud** | End-to-end (XSalsa20) | You only (zero-knowledge) |
 
-For maximum privacy, use **StealthCloud**. For full control over your data, use **Local** or **Remote** with your own server.
+For maximum privacy, use **StealthCloud**. For full control over your data, use **Local** with your own server.
 
 ### Security Audit
 
@@ -400,7 +361,7 @@ The audit script dynamically analyzes the codebase and generates a report based 
 - Vulnerability scanning (eval, XSS, password logging, etc.)
 - OWASP Mobile Top 10 compliance
 
-> **Note:** The security audit applies only to **StealthCloud** mode. For Local/Remote modes, security depends on your own server configuration.
+> **Note:** The security audit applies only to **StealthCloud** mode. For Local mode, security depends on your own server configuration.
 
 ---
 
@@ -601,7 +562,6 @@ If a file has no EXIF data, the EXIF-based proof fields are omitted or shown as 
 | Mode | How files are stored | Who can read them |
 |------|----------------------|-------------------|
 | **Local** | Original files on your own machine | You and anyone with access to that machine |
-| **Remote** | Original files on your server, protected by HTTPS and authentication | You and your server |
 | **StealthCloud** | Encrypted chunks and encrypted manifests | Only you, with your keys |
 
 ## In-App Purchases
@@ -665,12 +625,6 @@ Password reset on Android is tied to your device's unique identifier. **If you u
    - **Linux:** Settings → Network → your connection → **IPv4** (or run `ip a`)
 4. Do not use `localhost` or `127.0.0.1` (this will not work from a phone).
 5. Ensure the phone and computer are on the same Wi‑Fi network.
-
-**For Remote Server (internet/VPS):**
-1. Install PhotoLynk Server on your remote machine (VPS/home server).
-2. Enable HTTPS (TLS) for PhotoLynk Server on the remote machine (install a certificate and open the HTTPS port).
-3. In the app (Remote), enter the public host only (domain only — no http(s)://, no port, no path):
-   - Example: `remote.example.com`
 
 **Common issues:**
 - Server not running? Check tray icon or terminal
