@@ -25,7 +25,7 @@ Self-custodial auto-trading for Solana, built for Solana Mobile. Three strategie
 
 A voice companion that runs entirely on your phone: on-device language model (Qwen), offline Whisper speech recognition, and Kokoro/Piper voices — recognition, reasoning and speech synthesis all happen on-device. Wake/sleep phrases, multilingual replies, barge-in interruptions, voice tools (weather, web search, apps, alarms, calling), and a changeable avatar. Cloud models (OpenAI, Anthropic, Gemini and more) are strictly opt-in bring-your-own-key. Optional Solana wallet connect via Mobile Wallet Adapter; your avatar can be published as a cNFT you own — always behind explicit confirmation.
 
-- Google Play — coming soon · App Store — coming soon · Solana Mobile dApp Store (`ai.blipp.solana`)
+- Google Play — coming soon · App Store — coming soon · Solana Mobile dApp Store — coming soon
 
 > One paid plan in any StealthLynk app covers them all on your linked account — a Blipp One subscription unlocks PaceSeeker and a 100 GB PhotoLynk plan. Same 7-day trial, 3-day grace, and time-stacking rules everywhere.
 
