@@ -7,19 +7,27 @@ self-hosted infrastructure. Own your bytes, your keys, and your servers.
 ## Apps
 
 ### PhotoLynk — Released
+<img src="images/logo_photolynk.png" alt="PhotoLynk" width="64">
+
 Back up photos & videos securely — full-resolution media with no compression, every EXIF field intact, RAW and pro formats, and byte-level integrity checks before anything leaves the device. End-to-end encrypted StealthCloud or your own self-hosted server, QR-paired sync & restore across devices, duplicate cleanup, and tamper-evident Certified Photos (content/EXIF hashes + blockchain). Web3 Album cNFTs mint to *your* wallet — the service only pays fees.
 
-- [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
+- [Google Play](https://play.google.com/store/apps/details?id=com.photosync.app) · [App Store](https://apps.apple.com/app/photolynk/id6748285696) · Solana Mobile dApp Store (`com.photolynk.solana`) · [Desktop server releases](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android/releases)
 
 ### PaceSeeker — Released
+<img src="images/logo_paceseeker.png" alt="PaceSeeker" width="64">
+
 Self-custodial auto-trading for Solana, built for Solana Mobile. Three strategies: **DEX arbitrage** (Raydium, Orca, Meteora via Jupiter), **CEX arbitrage** across 7 exchanges, and a **DCA AI** with 37 indicators, a daily macro overlay, and self-learning adaptive weights. Simulate risk-free in SIM mode, then optionally go LIVE with biometric-gated session keys — your keys never leave the device. Daily loss caps, slippage guards, 24h expiring session wallet; DEX trades take a 10% performance fee on net profit only.
 
-- [Google Play](https://play.google.com/store/apps/details?id=com.stealthlynk.paceseeker) · Solana Mobile dApp Store (`com.stealthlynk.paceseeker`)
+- [Google Play](https://play.google.com/store/apps/details?id=com.stealthlynk.paceseeker) · App Store — coming soon · Solana Mobile dApp Store (`com.stealthlynk.paceseeker`)
 
-### Lane — Coming Soon
+### Blipp — Coming Soon
+<img src="images/logo_blipp.png" alt="Blipp" width="64">
+
 A voice companion that runs entirely on your phone: on-device language model (Qwen), offline Whisper speech recognition, and Kokoro/Piper voices — recognition, reasoning and speech synthesis all happen on-device. Wake/sleep phrases, multilingual replies, barge-in interruptions, voice tools (weather, web search, apps, alarms, calling), and a changeable avatar. Cloud models (OpenAI, Anthropic, Gemini and more) are strictly opt-in bring-your-own-key. Optional Solana wallet connect via Mobile Wallet Adapter; your avatar can be published as a cNFT you own — always behind explicit confirmation.
 
-> One paid plan in any StealthLynk app covers them all on your linked account — a Lane subscription unlocks PaceSeeker and a 100 GB PhotoLynk plan. Same 7-day trial, 3-day grace, and time-stacking rules everywhere.
+- Google Play — coming soon · App Store — coming soon · Solana Mobile dApp Store (`ai.blipp.solana`)
+
+> One paid plan in any StealthLynk app covers them all on your linked account — a Blipp One subscription unlocks PaceSeeker and a 100 GB PhotoLynk plan. Same 7-day trial, 3-day grace, and time-stacking rules everywhere.
 
 **PhotoLynk Server / Desktop Tray** — self-hosted backup server on a Pi, VPS, or desktop. Public bundle: [`Server-Public`](https://github.com/viktorvishyn369/Server-Public)
 
@@ -43,7 +51,7 @@ A voice companion that runs entirely on your phone: on-device language model (Qw
 | [`Server-Public`](https://github.com/viktorvishyn369/Server-Public) | public | Self-host bundle: desktop tray, public pages, policy documents |
 | [`PhotoLynk-iOS-Android`](https://github.com/viktorvishyn369/PhotoLynk-iOS-Android) | public | PhotoLynk desktop **releases** + early snapshot |
 | [`PhotoLynk-SolanaMobile`](https://github.com/viktorvishyn369/PhotoLynk-SolanaMobile) | public | Early Solana Mobile build (archived) |
-| `Server`, `PhotoLynk`, `PaceSeeker`, `Lane`, `nft-service` | private | Production codebase |
+| `Server`, `PhotoLynk`, `PaceSeeker`, `Blipp`, `nft-service` | private | Production codebase |
 
 ## Links
 
@@ -617,7 +625,7 @@ PhotoLynk offers two optional in-app purchases to unlock additional features:
 
 All purchases are paid from your Solana wallet in SOL, USDC, or SKR and settled on-chain — no platform billing, no auto-renewal. PhotoLynk does not directly handle payment card information. Both purchases are final and non-refundable except as required by applicable law.
 
-Every new user gets a one-time 7-day free trial, and every entitlement (trial, earned free week, paid plan) carries a 3-day grace tail. Time always stacks: a purchase or earned week starts where your current term ends — remaining trial days are never lost. The 100 GB and 200 GB plans can also be earned free by posting a weekly promo; every paid plan is an ecosystem plan that also unlocks PaceSeeker and Lane on your linked StealthLynk account at equivalent value.
+Every new user gets a one-time 7-day free trial, and every entitlement (trial, earned free week, paid plan) carries a 3-day grace tail. Time always stacks: a purchase or earned week starts where your current term ends — remaining trial days are never lost. The 100 GB and 200 GB plans can also be earned free by posting a weekly promo; every paid plan is an ecosystem plan that also unlocks PaceSeeker and Blipp on your linked StealthLynk account at equivalent value.
 
 ### Build Requirements (for building from source)
 - Node.js 20 LTS
@@ -755,6 +763,7 @@ See [LICENSE](https://github.com/viktorvishyn369/Server-Public/blob/main/LICENSE
 - [Privacy Policy](https://viktorvishyn369.github.io/PhotoLynk/privacy-policy.html)
 - [Terms of Service](https://viktorvishyn369.github.io/PhotoLynk/terms.html)
 - [Copyright](https://viktorvishyn369.github.io/PhotoLynk/copyright.html)
+- [Blipp Terms](https://stealthlynk.io/blipp/terms.html) · [Blipp Privacy](https://stealthlynk.io/blipp/privacy.html)
 
 ## Contributing
 
