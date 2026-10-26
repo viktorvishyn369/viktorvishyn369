@@ -84,7 +84,7 @@ Back up photos/videos to a local server or StealthCloud, and restore on any phon
 
 The PhotoLynk mobile apps feature end-to-end encryption, self-hosted or cloud backup options, and seamless cross-platform restore.
 
-**Android (Google Play) and Solana Mobile dApp Store are live.** iOS is in development — it uses App Store–compliant in-app purchases instead of on-chain payments, as Apple's rules restrict crypto payment flows.
+**Android (Google Play) and Solana Mobile dApp Store are live.** iOS is coming soon — it will use App Store–compliant in-app purchases instead of on-chain payments.
 
 Store links:
 - Android (Google Play): [Download PhotoLynk](https://play.google.com/store/apps/details?id=com.photosync.app)
@@ -572,30 +572,19 @@ If a file has no EXIF data, the EXIF-based proof fields are omitted or shown as 
 | **Local** | Original files on your own machine | You and anyone with access to that machine |
 | **StealthCloud** | Encrypted chunks and encrypted manifests | Only you, with your keys |
 
-## In-App Purchases
+## Subscription Plans (on-chain)
 
-PhotoLynk offers two optional in-app purchases to unlock additional features:
+All purchases are paid from your Solana wallet in SOL, USDC, or SKR and settled on-chain — no platform billing, no auto-renewal. Every new device gets a one-time 7-day free trial, and every entitlement carries a 3-day grace tail; purchases and earned weeks always stack on your remaining term.
 
-### Photo Verification Credit — $15.00 USD (Consumable)
-- Adds $15.00 credit to your account balance
-- Credit is used to pay for photo certification services (Certify Original), which create tamper-evident digital proofs of your photographs
-- Each certification cost varies based on file size and storage method
-- Unused credit does not expire and carries forward across sessions
-- Multiple purchases are cumulative — each adds to your total balance
+- **100 GB** — $1.75/mo
+- **200 GB** — $2.45/mo
+- **1 TB** — $7.99/mo
+- **Premium** — $49.99 one-time: 1 TB for a year, plus 100 free Web3 Album mints (then $0.01 USDC per mint, up to 10,000 — covers all on-chain expenses)
+- **Free weekly promo** — post one promo per week from the plan sheet for 7 days of access on every linked app
 
-### Premium — $49.99 USD (One-Time)
-- Unlocks 1 TB of end-to-end encrypted cloud storage for 1 year
-- Includes 100 completely free Web3 Album additions (no app commission, no network fees)
-- $0.01 USDC per NFT beyond 100, up to 10,000 total (covers all on-chain expenses)
-- Full access across all platforms and devices linked to your account
-- Pay with SOL or SKR via Solana wallet
-- One-time payment — no recurring charges, no auto-renewal
+Every paid plan is an ecosystem plan: it also unlocks PaceSeeker and Blipp on your linked StealthLynk account at equivalent value.
 
-All purchases are paid from your Solana wallet in SOL, USDC, or SKR and settled on-chain — no platform billing, no auto-renewal. PhotoLynk does not directly handle payment card information. Both purchases are final and non-refundable except as required by applicable law.
-
-Every new user gets a one-time 7-day free trial, and every entitlement (trial, earned free week, paid plan) carries a 3-day grace tail. Time always stacks: a purchase or earned week starts where your current term ends — remaining trial days are never lost. The 100 GB and 200 GB plans can also be earned free by posting a weekly promo; every paid plan is an ecosystem plan that also unlocks PaceSeeker and Blipp on your linked StealthLynk account at equivalent value.
-
-### Build Requirements (for building from source)
+## Build Requirements (for building from source)
 - Node.js 20 LTS
 - Python 3.x
 - Build tools for native dependencies (`sqlite3`, `bcrypt`, `sharp`):
